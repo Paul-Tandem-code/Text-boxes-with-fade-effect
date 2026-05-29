@@ -5,11 +5,20 @@
     font-family: "TWK Lausanne 350", sans-serif;
   }
 
+  /* ✅ Heading */
+  .section-heading {
+    max-width: 900px;
+    margin: 40px auto 10px auto;
+    font-size: 2rem; /* 2x title */
+    color: #1f91d1;
+    text-align: left;
+  }
+
   .container {
     display: flex;
     gap: 20px;
     max-width: 900px;
-    margin: 40px auto;
+    margin: 0 auto 40px auto;
   }
 
   .card {
@@ -21,6 +30,7 @@
     width: 100%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
+    cursor: pointer;
   }
 
   .image {
@@ -50,6 +60,24 @@
     opacity: 1;
   }
 
+  /* ✅ Overlay button */
+  .button-overlay {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
+
+  .button {
+    padding: 10px 16px;
+    background-color: #1f91d1; /* ✅ matches title + heading */
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 0.8rem;
+  }
+
   .text-block {
     padding-top: 12px;
     text-align: left;
@@ -65,6 +93,9 @@
     font-size: 1rem;
     font-weight: 350;
     margin-bottom: 8px;
+
+    /* ✅ Title colour */
+    color: #1f91d1;
   }
 
   .body {
@@ -76,32 +107,39 @@
     margin: 0 0 10px 0;
   }
 
-  .button {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 14px;
-    background-color: #1f91d1;
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    font-size: 0.8rem;
-  }
-
   @media (max-width: 768px) {
     .container {
       flex-direction: column;
       max-width: 500px;
     }
+
+    .card {
+      width: 100%;
+    }
+
+    .section-heading {
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 </style>
+
+<!-- ✅ Section heading -->
+<div class="section-heading">
+  Our issues
+</div>
 
 <div class="container">
 
   <!-- CARD 1 -->
   <div class="card">
-    <div class="image-wrapper">
-      <img src="https://tandemcarers.org.au/images/2026%20Election/260529%20couple%20blur%20crop%20new.jpg" class="image front">
-      <img src="https://tandemcarers.org.au/images/2026%20Election/2600526%20couple%20unblur%20crop.png" class="image back">
+    class="image front">
+      <img src="https://tandemcarers.org.au/images/2026%20Election/2600526%20couple%20unblur%20crop.png" alt="ADD ALT TEXT HERE" class="image back">
+
+      <div class="button-overlay">
+        <a href="#" class="button">Learn more</a>
+      </div>
     </div>
 
     <div class="text-block">
@@ -113,16 +151,17 @@
 
         <p>The Government must work to identify communities where the need for carer support is growing and build targeted supports that meet the needs of those communities.</p>
       </div>
-
-      <a href="#" class="button">Learn more</a>
     </div>
   </div>
 
   <!-- CARD 2 -->
   <div class="card">
-    <div class="image-wrapper">
-      <img src="https://tandemcarers.org.au/images/2026%20Election/260526%20dog%20couple%20blur%20crop.jpg" class="image front">
-      <img src="https://tandemcarers.org.au/images/2026%20Election/260526%20dog%20couple%20unblur%20crop.jpg" class="image back">
+    class="image front">
+      <img src="https://tandemcarers.org.au/images/2026%20Election/260526%20dog%20couple%20unblur%20crop.jpg" alt="ADD ALT TEXT HERE" class="image back">
+
+      <div class="button-overlay">
+        <a href="#" class="button">Learn more</a>
+      </div>
     </div>
 
     <div class="text-block">
@@ -134,16 +173,17 @@
 
         <p>The government must extend funding for Victoria's first-of-a-kind Mental Health and Wellbeing Connect centres and establish new centres where they're most needed.</p>
       </div>
-
-      <a href="#" class="button">Learn more</a>
     </div>
   </div>
 
   <!-- CARD 3 -->
   <div class="card">
-    <div class="image-wrapper">
-      <img src="https://tandemcarers.org.au/images/2026%20Election/260529%20Gym%20family%20blur%20crop%20new.jpg" class="image front">
-      <img src="https://tandemcarers.org.au/images/2026%20Election/260529%20Gym%20family%20unblur%20crop%20new.jpg" class="image back">
+    class="image front">
+      <img src="https://tandemcarers.org.au/images/2026%20Election/260529%20Gym%20family%20unblur%20crop%20new.jpg" alt="ADD ALT TEXT HERE" class="image back">
+
+      <div class="button-overlay">
+        <a href="#" class="button">Learn more</a>
+      </div>
     </div>
 
     <div class="text-block">
@@ -155,8 +195,6 @@
 
         <p>The government committed to putting the carer perspective and lived experience at the heart of our mental health and wellbeing system, and this commitment must be honoured.</p>
       </div>
-
-      <a href="#" class="button">Learn more</a>
     </div>
   </div>
 
