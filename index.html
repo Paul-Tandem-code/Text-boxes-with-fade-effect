@@ -8,17 +8,18 @@
   .container {
     display: flex;
     gap: 20px;
+    max-width: 900px;
+    margin: 40px auto;
   }
 
   .card {
     width: 33.33%;
   }
 
-  /* Image wrapper */
   .image-wrapper {
     position: relative;
     width: 100%;
-    aspect-ratio: 1 / 1; /* keeps square */
+    aspect-ratio: 1 / 1;
     overflow: hidden;
   }
 
@@ -30,12 +31,12 @@
     transition: opacity 0.5s ease;
   }
 
-  .image.front {
+  .front {
     opacity: 1;
     z-index: 1;
   }
 
-  .image.back {
+  .back {
     opacity: 0;
     z-index: 2;
   }
@@ -48,9 +49,9 @@
     opacity: 1;
   }
 
-  /* Text area */
   .text-block {
-    padding-top: 15px;
+    padding-top: 12px;
+    text-align: center;
   }
 
   .summary {
@@ -60,32 +61,31 @@
   }
 
   .title {
-    font-size: 1.6rem;
+    font-size: 1rem;
     font-weight: 350;
-    margin: 0 0 10px 0;
+    margin-bottom: 8px;
   }
 
   .body {
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 0.75rem;
+    line-height: 1.4;
   }
 
-  /* Button */
   .button {
     display: inline-block;
     margin-top: 15px;
-    padding: 12px 16px;
+    padding: 10px 14px;
     background-color: #1f91d1;
     color: white;
     text-decoration: none;
     border-radius: 10px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
-  /* Mobile */
   @media (max-width: 768px) {
     .container {
       flex-direction: column;
+      max-width: 500px;
     }
 
     .card {
@@ -99,18 +99,16 @@
   <!-- CARD 1 -->
   <div class="card">
     <div class="image-wrapper">
-      <img src="tandemcarers.org.au/images/2026%20Election/2600526%20couple%20blur%20crop.png" class="image front">
-      <img src="tandemcarers.org.au/images/2026%20Election/2600526%20couple%20blur%20crop.png" class="image back">
+      <img src="https://tandemcarers.org.au/images/2026%20Election/2600526%20couple%20blur%20crop.png" class="image front">
+      <img src="https://tandemcarers.org.au/images/2026%20Election/2600526%20couple%20unblur%20crop.png" class="image back">
     </div>
 
     <div class="text-block">
       <div class="summary">Identify carers</div>
       <div class="title">Recognise and respond to growing numbers of carers</div>
       <div class="body">
-        There are more carers than ever. Drought, bushfire, flooding, economic insecurity and housing stress mean more people in our community are experiencing mental health challenges and distress – which means more people are finding themselves in caring roles for the first time.
-The Government must work to identify communities where the need for carer support is growing and build targeted supports that meet the needs of those communities.
+        There are more carers than ever. Drought, bushfire, flooding, economic insecurity and housing stress mean more people in our community are experiencing mental health challenges and distress, leading more people into caring roles. The Government must identify communities where need is growing and build targeted supports.
       </div>
-
       <a href="#" class="button">Learn more</a>
     </div>
   </div>
@@ -118,22 +116,16 @@ The Government must work to identify communities where the need for carer suppor
   <!-- CARD 2 -->
   <div class="card">
     <div class="image-wrapper">
-      <img src="tandemcarers.org.au/images/2026%20Election/2600526%20couple%20blur%20crop.png" class="image front">
-      <img src="tandemcarers.org.au/images/2026%20Election/260526%20dog%20couple%20unblur%20crop.jpg" class="image back">
+      <img src="https://tandemcarers.org.au/images/2026%20Election/2600526%20couple%20blur%20crop.png" class="image front">
+      <img src="https://tandemcarers.org.au/images/2026%20Election/260526%20dog%20couple%20unblur%20crop.jpg" class="image back">
     </div>
 
     <div class="text-block">
       <div class="summary">Support carers</div>
-      <div class="title">Build both integrated and carer-specific services
-</div>
+      <div class="title">Build integrated and carer-specific services</div>
       <div class="body">
-        Family, carers and supporters of people with mental health challenges need their own supports to address the full diversity of their needs, and not just only within the mental health system. The government must invest in ensuring all health and human services support mental health carers.
-
-The government must extend funding for Victoria's first-of-a-kind Mental Health and Wellbeing Connect centres and establish new centres where they're most needed.
-
-
+        Carers need tailored supports that reflect their diverse needs, not only within mental health services. Government must invest in health and human services that recognise carers and extend funding for initiatives like Mental Health and Wellbeing Connect centres.
       </div>
-
       <a href="#" class="button">Learn more</a>
     </div>
   </div>
@@ -141,25 +133,18 @@ The government must extend funding for Victoria's first-of-a-kind Mental Health 
   <!-- CARD 3 -->
   <div class="card">
     <div class="image-wrapper">
-      <img src="tandemcarers.org.au/images/2026%20Election/260526%20Gym%20family%20blur%20crop.png")" class="image front">
-      <img src="tandemcarers.org.au/images/2026%20Election/260526%20Gym%20family%20unblur%20crop.png" class="image back">
+      <img src="https://tandemcarers.org.au/images/2026%20Election/260526%20Gym%20family%20blur%20crop.png" class="image front">
+      <img src="https://tandemcarers.org.au/images/2026%20Election/260526%20Gym%20family%20unblur%20crop.png" class="image back">
     </div>
 
     <div class="text-block">
       <div class="summary">Involve carers</div>
-      <div class="title">Include mental health carer voices and perspectives in system design and leadership
-</div>
+      <div class="title">Include carer voices in system design</div>
       <div class="body">
-        So much of mental health care is done by family, carers and supporters, who work hard in our communities to address gaps and harms, and drive positive change – often without compensation or recognition. 
-
-The government committed to putting the carer perspective and lived experience at the heart of our mental health and wellbeing system, and this commitment must be honoured. 
-
-
+        Mental health carers drive change and support communities often without recognition. Government commitments to centre lived experience must be honoured by embedding carer perspectives across system design and leadership.
       </div>
-
       <a href="#" class="button">Learn more</a>
     </div>
   </div>
 
 </div>
-``
