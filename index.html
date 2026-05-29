@@ -1,15 +1,22 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Issues Cards</title>
+
 <style>
   body {
     margin: 0;
     font-family: "TWK Lausanne 350", sans-serif;
   }
 
-  /* ✅ Heading */
   .section-heading {
     max-width: 900px;
     margin: 40px auto 10px auto;
-    font-size: 2rem; /* 2x title */
+    font-size: 2rem;
     color: #1f91d1;
     text-align: left;
   }
@@ -60,7 +67,6 @@
     opacity: 1;
   }
 
-  /* ✅ Overlay button */
   .button-overlay {
     position: absolute;
     bottom: 15%;
@@ -71,8 +77,8 @@
 
   .button {
     padding: 10px 16px;
-    background-color: #1f91d1; /* ✅ matches title + heading */
-    color: white;
+    background-color: #1f91d1;
+    color: #ffffff;
     text-decoration: none;
     border-radius: 10px;
     font-size: 0.8rem;
@@ -93,8 +99,6 @@
     font-size: 1rem;
     font-weight: 350;
     margin-bottom: 8px;
-
-    /* ✅ Title colour */
     color: #1f91d1;
   }
 
@@ -119,22 +123,21 @@
 
     .section-heading {
       max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
     }
   }
 </style>
+</head>
 
-<!-- ✅ Section heading -->
-<div class="section-heading">
-  Our issues
-</div>
+<body>
+
+<div class="section-heading">Our issues</div>
 
 <div class="container">
 
   <!-- CARD 1 -->
   <div class="card">
-    class="image front">
+    <div class="image-wrapper" onclick="handleTap(this)">
+      <img src="https://tandemcarers.org.au/images/2026%20Election/260529%20couple%20blur%20crop%20new.jpg" alt="ADD ALT TEXT HERE" class="image front">
       <img src="https://tandemcarers.org.au/images/2026%20Election/2600526%20couple%20unblur%20crop.png" alt="ADD ALT TEXT HERE" class="image back">
 
       <div class="button-overlay">
@@ -156,7 +159,8 @@
 
   <!-- CARD 2 -->
   <div class="card">
-    class="image front">
+    <div class="image-wrapper" onclick="handleTap(this)">
+      <img src="https://tandemcarers.org.au/images/2026%20Election/260526%20dog%20couple%20blur%20crop.jpg" alt="ADD ALT TEXT HERE" class="image front">
       <img src="https://tandemcarers.org.au/images/2026%20Election/260526%20dog%20couple%20unblur%20crop.jpg" alt="ADD ALT TEXT HERE" class="image back">
 
       <div class="button-overlay">
@@ -178,7 +182,8 @@
 
   <!-- CARD 3 -->
   <div class="card">
-    class="image front">
+    <div class="image-wrapper" onclick="handleTap(this)">
+      <img src="https://tandemcarers.org.au/images/2026%20Election/260529%20Gym%20family%20blur%20crop%20new.jpg" alt="ADD ALT TEXT HERE" class="image front">
       <img src="https://tandemcarers.org.au/images/2026%20Election/260529%20Gym%20family%20unblur%20crop%20new.jpg" alt="ADD ALT TEXT HERE" class="image back">
 
       <div class="button-overlay">
@@ -199,3 +204,27 @@
   </div>
 
 </div>
+
+<script>
+function handleTap(el) {
+  if (window.innerWidth <= 768) {
+
+    if (el.classList.contains("active")) {
+      const link = el.querySelector(".button");
+      window.location.href = link.href;
+      return;
+    }
+
+    el.classList.add("active");
+
+    const front = el.querySelector(".front");
+    const back = el.querySelector(".back");
+
+    front.style.opacity = 0;
+    back.style.opacity = 1;
+  }
+}
+</script>
+
+</body>
+</html>
