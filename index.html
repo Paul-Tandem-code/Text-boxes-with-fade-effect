@@ -45,19 +45,26 @@
     height: 100%;
     object-fit: cover;
     object-position: center top;
-    transition: opacity 1.8s ease;
+    transition: opacity 1.8s ease; /* ✅ original fade */
   }
 
-  .front { opacity: 1; z-index: 1; }
-  .back  { opacity: 0; z-index: 2; }
+  .front {
+    opacity: 1;
+    z-index: 1;
+  }
 
+  .back {
+    opacity: 0;
+    z-index: 2;
+  }
+
+  /* ✅ REVERTED: simple crossfade */
   .image-wrapper:hover .front {
     opacity: 0;
   }
 
   .image-wrapper:hover .back {
     opacity: 1;
-    transition-delay: 0.1s;
   }
 
   .button-overlay {
@@ -160,12 +167,12 @@
   <div class="card">
     <div class="image-wrapper">
       <img 
-        src="https://tandemcarers.org.au/images/2026%20Election/260529%20dog%20couple%20blur%20crop%20new.jpg"
+        src="https://tandemcarers.org.au/images/2026%20Election/260601%20young%20couple%20blur%20crop%20web.jpg"
         alt="A young female couple, one kissing the other, in front of a blue sky. one woman is blurred and the other one is in full focus. When you move the cursor over the image, the blurred woman comes into focus."
         class="image front"
       >
       <img 
-        src="https://tandemcarers.org.au/images/2026%20Election/260529%20dog%20couple%20unblur%20crop%20new.jpg"
+        src="https://tandemcarers.org.au/images/2026%20Election/260601%20young%20couple%20unblur%20crop%20web.jpg"
         alt=""
         aria-hidden="true"
         class="image back"
