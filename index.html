@@ -36,7 +36,6 @@
     width: 100%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    background: #000;
   }
 
   .image {
@@ -45,7 +44,6 @@
     height: 100%;
     object-fit: cover;
     object-position: center top;
-    transition: opacity 1.8s ease; /* ✅ original fade */
   }
 
   .front {
@@ -58,13 +56,15 @@
     z-index: 2;
   }
 
-  /* ✅ REVERTED: simple crossfade */
+  /* ✅ TRUE ORIGINAL CROSSFADE */
   .image-wrapper:hover .front {
     opacity: 0;
+    transition: opacity 1.8s ease;
   }
 
   .image-wrapper:hover .back {
     opacity: 1;
+    transition: opacity 1.8s ease;
   }
 
   .button-overlay {
@@ -202,7 +202,7 @@
         class="image front"
       >
       <img 
-        src="https://tandemcarers.org.au/images/2026%20Election/260529%20Gym%20family%20unblur%20crop%20new.jpg"
+        src="https://tandemcarers.org.au/images/"
         alt=""
         aria-hidden="true"
         class="image back"
@@ -215,7 +215,7 @@
 
     <div class="text-block">
       <div class="summary">Involve carers</div>
-      <h3 class="title">Ensure carers have a genuine voice in how services are designed and delivered</h3>
+      <h3 class="title">Give carers a voice in how services are designed and delivered</h3>
 
       <div class="body">
         <p>So much of mental health care is done by family, carers and supporters. The government committed to putting the carer perspective and lived experience at the heart of our mental health and wellbeing system, and this commitment must be honoured.</p>
