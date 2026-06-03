@@ -5,123 +5,69 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Our issues</title>
+<title>Scroll Fade Banner</title>
 
 <style>
   body {
     margin: 0;
-    font-family: Arial, sans-serif;
   }
 
-  .section-heading {
-    max-width: 900px;
-    margin: 40px auto 10px auto;
-    font-size: 2rem;
-    color: #1f91d1;
+  .spacer {
+    height: 1400px;
   }
 
-  .container {
-    display: flex;
-    gap: 20px;
-    max-width: 900px;
-    margin: 0 auto 40px auto;
-  }
-
-  .card {
-    width: 33.33%;
-  }
-
-  .image-wrapper {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1 / 1;
+  .banner {
+    position: sticky;
+    top: 0;
+    height: 980px;
     overflow: hidden;
   }
 
   .image {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 980px;
     object-fit: cover;
-    object-position: center top;
+    object-position: top center;
+    transition: opacity 0.3s linear;
   }
 
-  .front {
-    opacity: 1;
+  .image1 {
     z-index: 1;
   }
 
-  .back {
+  .image2 {
     opacity: 0;
     z-index: 2;
   }
 
-  /* ✅ TRUE ORIGINAL CROSSFADE */
-  .image-wrapper:hover .front {
-    opacity: 0;
-    transition: opacity 1.8s ease;
-  }
-
-  .image-wrapper:hover .back {
-    opacity: 1;
-    transition: opacity 1.8s ease;
-  }
-
-  .button-overlay {
+  .overlay {
     position: absolute;
-    bottom: 15%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 55%;
+    left: 25%;
+    transform: translateY(-50%);
+    width: 40%;
+    opacity: 0;
     z-index: 3;
+    transition: opacity 0.3s linear, transform 0.3s ease;
   }
 
-  .button {
-    padding: 10px 16px;
-    background-color: #1f91d1;
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    font-size: 1.05rem;
-  }
-
-  .text-block {
-    padding-top: 12px;
-  }
-
-  .summary {
-    font-size: 1.1rem;
-    opacity: 0.7;
-    margin-bottom: 6px;
-  }
-
-  .title {
-    font-size: 1.4rem;
-    font-weight: 350;
-    margin-bottom: 10px;
-    color: #1f91d1;
-  }
-
-  .body {
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-
-  .body p {
-    margin: 0 0 12px 0;
+  .overlay img {
+    width: 100%;
+    display: block;
   }
 
   @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
-      max-width: 500px;
+    .overlay {
+      width: 75%;
+      left: 12.5%;
     }
+  }
 
-    .card {
-      width: 100%;
-    }
-
-    .section-heading {
-      max-width: 500px;
+  @media (max-width: 480px) {
+    .overlay {
+      width: 90%;
+      left: 5%;
     }
   }
 </style>
@@ -129,101 +75,63 @@
 
 <body>
 
-<h2 class="section-heading">Our issues</h2>
+<section class="banner">
 
-<div class="container">
+  <!-- Primary image with full alt -->
+  <img 
+    src="https://tandemcarers.org.au/images/2026%20Election/20260527%20FN%20family%20blur%20full%20width.png"
+    alt="Blurred image of a family with one man in full focus. As you scroll down the page, the image fades to a clear image with all people in focus. A banner appears and says 'put all mental health carers in the picture’"
+    class="image image1"
+  >
 
-  <!-- CARD 1 -->
-  <div class="card">
-    <div class="image-wrapper">
-      <img 
-        src="https://tandemcarers.org.au/images/2026%20Election/260529%20couple%20blur%20crop%20new.jpg"
-        alt="A young man with long hair and a woman. The woman is out of focus. When you move the cursor over the image, the woman comes into focus."
-        class="image front"
-      >
-      <img 
-        src="https://tandemcarers.org.au/images/2026%20Election/2600526%20couple%20unblur%20crop.png"
-        alt=""
-        aria-hidden="true"
-        class="image back"
-      >
+  <!-- Decorative second image -->
+  <img 
+    src="https://tandemcarers.org.au/images/2026%20Election/20260527%20FN%20family%20unblur%20full%20width.png"
+    alt=""
+    aria-hidden="true"
+    class="image image2"
+    id="img2"
+  >
 
-      <div class="button-overlay">
-        <a href="#" class="button">Learn more</a>
-      </div>
-    </div>
-
-    <div class="text-block">
-      <div class="summary">Identify carers</div>
-      <h3 class="title">Recognise and respond to the growing number of carers</h3>
-
-      <div class="body">
-        <p>There are more carers than ever. The Government must work to identify communities where the need for carer support is growing and build targeted supports that meet the needs of those communities.</p>
-      </div>
-    </div>
+  <!-- Decorative overlay -->
+  <div class="overlay" id="overlay" aria-hidden="true">
+    <img src="https://tandemcarers.org.au/images/2026%20Election/260527%20In%20the%20picture%20text%20grey%20background.png" alt="">
   </div>
 
-  <!-- CARD 2 -->
-  <div class="card">
-    <div class="image-wrapper">
-      <img 
-        src="https://tandemcarers.org.au/images/2026%20Election/260601%20young%20couple%20blur%20crop%20web.jpg"
-        alt="A young female couple, one kissing the other, in front of a blue sky. one woman is blurred and the other one is in full focus. When you move the cursor over the image, the blurred woman comes into focus."
-        class="image front"
-      >
-      <img 
-        src="https://tandemcarers.org.au/images/2026%20Election/260601%20young%20couple%20unblur%20crop%20web.jpg"
-        alt=""
-        aria-hidden="true"
-        class="image back"
-      >
+  <!-- No-JS fallback -->
+  <noscript>
+    <img 
+      src="https://tandemcarers.org.au/images/2026%20Election/20260527%20FN%20family%20unblur%20full%20width.png"
+      alt="Blurred image of a family with one man in full focus. As you scroll down the page, the image fades to a clear image with all people in focus. A banner appears and says 'put all mental health carers in the picture’"
+      style="width:100%; height:980px; object-fit:cover;"
+    >
+  </noscript>
 
-      <div class="button-overlay">
-        <a href="#" class="button">Learn more</a>
-      </div>
-    </div>
+</section>
 
-    <div class="text-block">
-      <div class="summary">Support carers</div>
-      <h3 class="title">Invest in services that support mental health carers</h3>
+<div class="spacer"></div>
 
-      <div class="body">
-        <p>There are more carers than ever. The Government must work to identify communities where the need for carer support is growing and build targeted supports that meet the needs of those communities.</p>
-      </div>
-    </div>
-  </div>
+<script>
+window.addEventListener("scroll", function () {
+  const img2 = document.getElementById("img2");
+  const overlay = document.getElementById("overlay");
 
-  <!-- CARD 3 -->
-  <div class="card">
-    <div class="image-wrapper">
-      <img 
-        src="https://tandemcarers.org.au/images/2026%20Election/260529%20Gym%20family%20blur%20crop%20new.jpg"
-        alt="A family made up of a mother, father, and two youths, in an indoor space like a gym or community hall. All except the woman are blurred. When you move the cursor over the image, everyone comes into focus."
-        class="image front"
-      >
-      <img 
-        src="https://tandemcarers.org.au/images/2026%20Election/260529%20Gym%20family%20unblur%20crop%20new.jpg"
-        alt=""
-        aria-hidden="true"
-        class="image back"
-      >
+  const scrollY = window.scrollY;
+  const fadeDistance = 1200;
+  let progress = scrollY / fadeDistance;
 
-      <div class="button-overlay">
-        <a href="#" class="button">Learn more</a>
-      </div>
-    </div>
+  let raw = Math.min(Math.max((progress - 0.35) / 0.65, 0), 1);
 
-    <div class="text-block">
-      <div class="summary">Involve carers</div>
-      <h3 class="title">Give carers a voice in how services are designed and delivered</h3>
+  let eased = raw < 0.5
+    ? 2 * raw * raw
+    : 1 - Math.pow(-2 * raw + 2, 2) / 2;
 
-      <div class="body">
-        <p>So much of mental health care is done by family, carers and supporters. The government committed to putting the carer perspective and lived experience at the heart of our mental health and wellbeing system, and this commitment must be honoured.</p>
-      </div>
-    </div>
-  </div>
+  img2.style.opacity = eased;
+  overlay.style.opacity = eased;
 
-</div>
+  overlay.style.transform = `translateY(${ -50 + (eased * -5) }%)`;
+});
+</script>
 
 </body>
 </html>
