@@ -5,12 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Our Issues</title>
+<title>Our issues</title>
 
 <style>
   body {
     margin: 0;
-    font-family: "TWK Lausanne 350", sans-serif;
+    font-family: Arial, sans-serif;
   }
 
   .section-heading {
@@ -18,7 +18,6 @@
     margin: 40px auto 10px auto;
     font-size: 2rem;
     color: #1f91d1;
-    text-align: left;
   }
 
   .container {
@@ -37,7 +36,7 @@
     width: 100%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    cursor: pointer;
+    background: #000;
   }
 
   .image {
@@ -49,15 +48,8 @@
     transition: opacity 1.8s ease;
   }
 
-  .front {
-    opacity: 1;
-    z-index: 1;
-  }
-
-  .back {
-    opacity: 0;
-    z-index: 2;
-  }
+  .front { opacity: 1; z-index: 1; }
+  .back  { opacity: 0; z-index: 2; }
 
   .image-wrapper:hover .front {
     opacity: 0;
@@ -65,6 +57,7 @@
 
   .image-wrapper:hover .back {
     opacity: 1;
+    transition-delay: 0.1s;
   }
 
   .button-overlay {
@@ -78,7 +71,7 @@
   .button {
     padding: 10px 16px;
     background-color: #1f91d1;
-    color: #ffffff;
+    color: white;
     text-decoration: none;
     border-radius: 10px;
     font-size: 1.05rem;
@@ -86,10 +79,7 @@
 
   .text-block {
     padding-top: 12px;
-    text-align: left;
   }
-
-  /* ✅ UPDATED TEXT SIZES (better fix) */
 
   .summary {
     font-size: 1.1rem;
@@ -132,15 +122,24 @@
 
 <body>
 
-<div class="section-heading">Our issues</div>
+<h2 class="section-heading">Our issues</h2>
 
 <div class="container">
 
   <!-- CARD 1 -->
   <div class="card">
-    <div class="image-wrapper" onclick="handleTap(this)">
-      <img src="https://tandemcarers.org.au/images/2026%20Election/260529%20couple%20blur%20crop%20new.jpg" alt="a young man with long hair and a woman. The woman is out of focus" class="image front">
-      <img src="https://tandemcarers.org.au/images/2026%20Election/2600526%20couple%20unblur%20crop.png" alt="a young man with long hair and a woman. Both are in full focus" class="image back">
+    <div class="image-wrapper">
+      <img 
+        src="https://tandemcarers.org.au/images/2026%20Election/260529%20couple%20blur%20crop%20new.jpg"
+        alt="A young man with long hair and a woman. The woman is out of focus. When you move the cursor over the image, the woman comes into focus."
+        class="image front"
+      >
+      <img 
+        src="https://tandemcarers.org.au/images/2026%20Election/2600526%20couple%20unblur%20crop.png"
+        alt=""
+        aria-hidden="true"
+        class="image back"
+      >
 
       <div class="button-overlay">
         <a href="#" class="button">Learn more</a>
@@ -149,21 +148,28 @@
 
     <div class="text-block">
       <div class="summary">Identify carers</div>
-      <div class="title">Recognise and respond to the growing number of carers</div>
+      <h3 class="title">Recognise and respond to the growing number of carers</h3>
 
       <div class="body">
-        <p>There are more carers than ever. Drought, bushfire, flooding, economic insecurity and housing stress mean more people in our community are experiencing mental health challenges and distress – which means more people are finding themselves in caring roles for the first time.</p>
-
-        <p>The Government must work to identify communities where the need for carer support is growing and build targeted supports that meet the needs of those communities.</p>
+        <p>There are more carers than ever. The Government must work to identify communities where the need for carer support is growing and build targeted supports that meet the needs of those communities.</p>
       </div>
     </div>
   </div>
 
   <!-- CARD 2 -->
   <div class="card">
-    <div class="image-wrapper" onclick="handleTap(this)">
-      <img src="https://tandemcarers.org.au/images/2026%20Election/260601%20young%20couple%20blur%20crop%20web.jpg" alt="a young couple of women, one kissing the other, in front of a blue sky. one woman is blurred and the other one is in full focus" class="image front">
-      <img src="https://tandemcarers.org.au/images/2026%20Election/260601%20young%20couple%20unblur%20crop%20web.jpg" alt="a young couple of women, one kissing the other, in front of a blue sky. both are in full focus" class="image back">
+    <div class="image-wrapper">
+      <img 
+        src="https://tandemcarers.org.au/images/2026%20Election/260529%20dog%20couple%20blur%20crop%20new.jpg"
+        alt="A young female couple, one kissing the other, in front of a blue sky. one woman is blurred and the other one is in full focus. When you move the cursor over the image, the blurred woman comes into focus."
+        class="image front"
+      >
+      <img 
+        src="https://tandemcarers.org.au/images/2026%20Election/260529%20dog%20couple%20unblur%20crop%20new.jpg"
+        alt=""
+        aria-hidden="true"
+        class="image back"
+      >
 
       <div class="button-overlay">
         <a href="#" class="button">Learn more</a>
@@ -172,21 +178,28 @@
 
     <div class="text-block">
       <div class="summary">Support carers</div>
-      <div class="title">Build both integrated and carer-specific services</div>
+      <h3 class="title">Build both integrated and carer-specific services</h3>
 
       <div class="body">
-        <p>Family, carers and supporters of people with mental health challenges need their own supports to address the full diversity of their needs, and not just within the mental health system. The government must invest in ensuring all health and human services support mental health carers.</p>
-
-        <p>The government must extend funding for Victoria's first-of-a-kind Mental Health and Wellbeing Connect centres and establish new centres where they're needed most.</p>
+        <p>There are more carers than ever. The Government must work to identify communities where the need for carer support is growing and build targeted supports that meet the needs of those communities.</p>
       </div>
     </div>
   </div>
 
   <!-- CARD 3 -->
   <div class="card">
-    <div class="image-wrapper" onclick="handleTap(this)">
-      <img src="https://tandemcarers.org.au/images/2026%20Election/260529%20Gym%20family%20blur%20crop%20new.jpg" alt="a family made up of a mother, father, and two youths, in an indoor space like a gym or community hall. All except the woman are blurred." class="image front">
-      <img src="https://tandemcarers.org.au/images/2026%20Election/260529%20Gym%20family%20unblur%20crop%20new.jpg" alt="a family made up of a mother, father, and two youths, in an indoor space like a gym or community hall. All are in full focus." class="image back">
+    <div class="image-wrapper">
+      <img 
+        src="https://tandemcarers.org.au/images/2026%20Election/260529%20Gym%20family%20blur%20crop%20new.jpg"
+        alt="A family made up of a mother, father, and two youths, in an indoor space like a gym or community hall. All except the woman are blurred. When you move the cursor over the image, everyone comes into focus."
+        class="image front"
+      >
+      <img 
+        src="https://tandemcarers.org.au/images/2026%20Election/260529%20Gym%20family%20unblur%20crop%20new.jpg"
+        alt=""
+        aria-hidden="true"
+        class="image back"
+      >
 
       <div class="button-overlay">
         <a href="#" class="button">Learn more</a>
@@ -195,36 +208,15 @@
 
     <div class="text-block">
       <div class="summary">Involve carers</div>
-      <div class="title">Include mental health carer voices and perspectives in system design and leadership</div>
+      <h3 class="title">Ensure carers have a genuine voice in how services are designed and delivered</h3>
 
       <div class="body">
-        <p>So much of mental health care is done by family, carers and supporters, who work hard in our communities to address gaps and harms, and drive positive change – often without compensation or recognition.</p>
-
-        <p>The government committed to putting the carer perspective and lived experience at the heart of our mental health and wellbeing system, and this commitment must be honoured.</p>
+        <p>So much of mental health care is done by family, carers and supporters. The government committed to putting the carer perspective and lived experience at the heart of our mental health and wellbeing system, and this commitment must be honoured.</p>
       </div>
     </div>
   </div>
 
 </div>
-
-<script>
-function handleTap(el) {
-  if (window.innerWidth <= 768) {
-    if (el.classList.contains("active")) {
-      const link = el.querySelector(".button");
-      window.location.href = link.href;
-      return;
-    }
-
-    el.classList.add("active");
-    const front = el.querySelector(".front");
-    const back = el.querySelector(".back");
-
-    front.style.opacity = 0;
-    back.style.opacity = 1;
-  }
-}
-</script>
 
 </body>
 </html>
