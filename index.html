@@ -1,407 +1,211 @@
 <!DOCTYPE html>
-2
 <html lang="en">
-3
 <head>
-4
 <meta charset="UTF-8">
-5
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-6
- 
-7
+
 <title>Our issues</title>
-8
- 
-9
+
 <style>
-10
-body {
-11
-margin: 0;
-12
-font-family: Arial, sans-serif;
-13
-}
-14
- 
-15
-.container {
-16
-display: flex;
-17
-gap: 20px;
-18
-max-width: 900px;
-19
-margin: 40px auto;
-20
-}
-21
- 
-22
-.card {
-23
-width: 33.33%;
-24
-}
-25
- 
-26
-.image-wrapper {
-27
-position: relative;
-28
-width: 100%;
-29
-aspect-ratio: 1 / 1;
-30
-overflow: hidden;
-31
-}
-32
- 
-33
-.image {
-34
-position: absolute;
-35
-width: 100%;
-36
-height: 100%;
-37
-object-fit: cover;
-38
-object-position: center top;
-39
-}
-40
- 
-41
-.front {
-42
-opacity: 1;
-43
-z-index: 1;
-44
-}
-45
- 
-46
-.back {
-47
-opacity: 0;
-48
-z-index: 2;
-49
-}
-50
- 
-51
-.image-wrapper:hover .front {
-52
-opacity: 0;
-53
-transition: opacity 1.8s ease;
-54
-}
-55
- 
-56
-.image-wrapper:hover .back {
-57
-opacity: 1;
-58
-transition: opacity 1.8s ease;
-59
-}
-60
- 
-61
-.button-overlay {
-62
-position: absolute;
-63
-bottom: 15%;
-64
-left: 50%;
-65
-transform: translateX(-50%);
-66
-z-index: 3;
-67
-}
-68
- 
-69
-.button {
-70
-padding: 10px 16px;
-71
-background-color: #1f91d1;
-72
-color: white;
-73
-text-decoration: none;
-74
-border-radius: 10px;
-75
-font-size: 1.05rem;
-76
-}
-77
- 
-78
-.text-block {
-79
-padding-top: 12px;
-80
-}
-81
- 
-82
-.title {
-83
-font-size: 1.4rem;
-84
-font-weight: 350;
-85
-margin-bottom: 10px;
-86
-color: #1f91d1;
-87
-}
-88
- 
-89
-.body {
-90
-font-size: 1.1rem;
-91
-line-height: 1.6;
-92
-}
-93
- 
-94
-@media (max-width: 768px) {
-95
-.container {
-96
-flex-direction: column;
-97
-max-width: 500px;
-98
-}
-99
- 
-100
-.card {
-101
-width: 100%;
-102
-}
-103
-}
-104
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    display: flex;
+    gap: 20px;
+    max-width: 900px;
+    margin: 40px auto;
+  }
+
+  .card {
+    width: 33.33%;
+  }
+
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+  }
+
+  .image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .front {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .back {
+    opacity: 0;
+    z-index: 2;
+  }
+
+  /* ✅ Original smooth fade */
+  .image-wrapper:hover .front {
+    opacity: 0;
+    transition: opacity 1.8s ease;
+  }
+
+  .image-wrapper:hover .back {
+    opacity: 1;
+    transition: opacity 1.8s ease;
+  }
+
+  .button-overlay {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
+
+  .button {
+    padding: 10px 16px;
+    background-color: #1f91d1;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 1.05rem;
+  }
+
+  .text-block {
+    padding-top: 12px;
+  }
+
+  .summary {
+    font-size: 1.1rem;
+    opacity: 0.7;
+    margin-bottom: 6px;
+  }
+
+  .title {
+    font-size: 1.4rem;
+    font-weight: 350;
+    margin-bottom: 10px;
+    color: #1f91d1;
+  }
+
+  .body {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      max-width: 500px;
+    }
+
+    .card {
+      width: 100%;
+    }
+  }
 </style>
-105
 </head>
-106
- 
-107
+
 <body>
-108
- 
-109
+
 <div class="container">
-110
- 
-111
-<!-- CARD 1 -->
-112
-<div class="card">
-113
-<div class="image-wrapper">
-114
-<img
-115
-src="https://tandemcarers.org.au/images/2026%20Election/260529%20couple%20blur%20crop%20new.jpg"
-116
-alt="A young man with long hair and a woman. The woman is out of focus. When you move the cursor over the image, the woman comes into focus."
-117
-class="image front"
-118
->
-119
-<img
-120
-src="https://tandemcarers.org.au/images/2026%20Election/2600526%20couple%20unblur%20crop.png"
-121
-alt=""
-122
-aria-hidden="true"
-123
-class="image back"
-124
->
-125
- 
-126
-<div class="button-overlay">
-127
-<a href="https://tandemcarers.org.au/2026Election/Learn-more/Learn%20more.aspx" target="_top" class="button">
-128
-Learn more
-129
-</a>
-130
+
+  <!-- CARD 1 -->
+  <div class="card">
+    <div class="image-wrapper">
+      <img 
+        src="https://tandemcarers.org.au/images/2026%20Election/260529%20couple%20blur%20crop%20new.jpg"
+        alt="A young man with long hair and a woman. The woman is out of focus. When you move the cursor over the image, the woman comes into focus."
+        class="image front"
+      >
+      <img 
+        src="https://tandemcarers.org.au/images/2026%20Election/2600526%20couple%20unblur%20crop.png"
+        alt=""
+        aria-hidden="true"
+        class="image back"
+      >
+
+      <div class="button-overlay">
+        <a href="https://tandemcarers.org.au/2026Election/Learn-more/Learn%20more.aspx" target="_top" class="button">
+          Learn more
+        </a>
+      </div>
+    </div>
+
+    <div class="text-block">
+      <h3 class="title">Recognise carers</h3>
+      <div class="body">
+        Identify where the number and needs of mental health carers are growing, and meet the growing need - including by increasing Tandem's core funding.
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="card">
+    <div class="image-wrapper">
+      <img 
+        src="https://tandemcarers.org.au/images/2026%20Election/260601%20young%20couple%20blur%20crop%20web.jpg"
+        alt="A young female couple, one kissing the other, in front of a blue sky. one woman is blurred and the other one is in full focus. When you move the cursor over the image, the blurred woman comes into focus."
+        class="image front"
+      >
+      <img 
+        src="https://tandemcarers.org.au/images/2026%20Election/260601%20young%20couple%20unblur%20crop%20web.jpg"
+        alt=""
+        aria-hidden="true"
+        class="image back"
+      >
+
+      <div class="button-overlay">
+        <a href="https://tandemcarers.org.au/2026Election/Learn-more/Learn%20more.aspx" target="_top" class="button">
+          Learn more
+        </a>
+      </div>
+    </div>
+
+    <div class="text-block">
+      <h3 class="title">Support carers</h3>
+      <div class="body">
+        Expand the reach of the Mental Health and Wellbeing Connect Centres, and develop a State Mental Health Carer Strategy, to ensure that all mental health carers can access and receive support.
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="card">
+    <div class="image-wrapper">
+      <img 
+        src="https://tandemcarers.org.au/images/2026%20Election/260529%20Gym%20family%20blur%20crop%20new.jpg"
+        alt="A family made up of a mother, father, and two youths, in an indoor space like a gym or community hall. All except the woman are blurred. When you move the cursor over the image, everyone comes into focus."
+        class="image front"
+      >
+      <img 
+        src="https://tandemcarers.org.au/images/2026%20Election/260529%20Gym%20family%20unblur%20crop%20new.jpg"
+        alt=""
+        aria-hidden="true"
+        class="image back"
+      >
+
+      <div class="button-overlay">
+        <a href="https://tandemcarers.org.au/2026Election/Learn-more/Learn%20more.aspx" target="_top" class="button">
+          Learn more
+        </a>
+      </div>
+    </div>
+
+    <div class="text-block">
+      <h3 class="title">Involve carers</h3>
+      <div class="body">
+        Strengthen carer representation and leadership, and embed carer expertise in service design and decision-making.
+      </div>
+    </div>
+  </div>
+
 </div>
-131
-</div>
-132
- 
-133
-<div class="text-block">
-134
-<h3 class="title">Recognise carers</h3>
-135
-<div class="body">
-136
-Identify where the number and needs of mental health carers are growing, and meet the growing need, including by increasing Tandem's core funding.
-137
-</div>
-138
-</div>
-139
-</div>
-140
- 
-141
-<!-- CARD 2 -->
-142
-<div class="card">
-143
-<div class="image-wrapper">
-144
-<img
-145
-src="https://tandemcarers.org.au/images/2026%20Election/260601%20young%20couple%20blur%20crop%20web.jpg"
-146
-alt="A young female couple, one kissing the other, in front of a blue sky. one woman is blurred and the other one is in full focus. When you move the cursor over the image, the blurred woman comes into focus."
-147
-class="image front"
-148
->
-149
-<img
-150
-src="https://tandemcarers.org.au/images/2026%20Election/260601%20young%20couple%20unblur%20crop%20web.jpg"
-151
-alt=""
-152
-aria-hidden="true"
-153
-class="image back"
-154
->
-155
- 
-156
-<div class="button-overlay">
-157
-<a href="https://tandemcarers.org.au/2026Election/Learn-more/Learn%20more.aspx" target="_top" class="button">
-158
-Learn more
-159
-</a>
-160
-</div>
-161
-</div>
-162
- 
-163
-<div class="text-block">
-164
-<h3 class="title">Support carers</h3>
-165
-<div class="body">
-166
-Expand the reach of the Mental Health and Wellbeing Connect Centres, and develop a State Mental Health Carer Strategy, to ensure that all mental health carers can access and receive support.
-167
-</div>
-168
-</div>
-169
-</div>
-170
- 
-171
-<!-- CARD 3 -->
-172
-<div class="card">
-173
-<div class="image-wrapper">
-174
-<img
-175
-src="https://tandemcarers.org.au/images/2026%20Election/260529%20Gym%20family%20blur%20crop%20new.jpg"
-176
-alt="A family made up of a mother, father, and two youths, in an indoor space like a gym or community hall. All except the woman are blurred. When you move the cursor over the image, everyone comes into focus."
-177
-class="image front"
-178
->
-179
-<img
-180
-src="https://tandemcarers.org.au/images/2026%20Election/260529%20Gym%20family%20unblur%20crop%20new.jpg"
-181
-alt=""
-182
-aria-hidden="true"
-183
-class="image back"
-184
->
-185
- 
-186
-<div class="button-overlay">
-187
-<a href="https://tandemcarers.org.au/2026Election/Learn-more/Learn%20more.aspx" target="_top" class="button">
-188
-Learn more
-189
-</a>
-190
-</div>
-191
-</div>
-192
- 
-193
-<div class="text-block">
-194
-<h3 class="title">Involve carers</h3>
-195
-<div class="body">
-196
-Strengthen carer representation and leadership, and embed carer expertise in service design and decision-making.
-197
-</div>
-198
-</div>
-199
-</div>
-200
- 
-201
-</div>
-202
- 
-203
+
 </body>
-204
 </html>
